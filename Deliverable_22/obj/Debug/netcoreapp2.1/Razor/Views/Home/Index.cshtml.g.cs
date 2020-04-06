@@ -61,7 +61,7 @@ using Deliverable_22.Models;
             WriteLiteral("\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Welcome to the Cool People Club!</h1>\r\n    <h2>You must be a registered member to continue:</h2>\r\n    <p>\r\n        Click ");
             EndContext();
             BeginContext(221, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e4cd65aa2cc45fa9820285a1caeed04", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a550d292c93c409cb3d3a12dab623d9f", async() => {
                 BeginContext(268, 5, true);
                 WriteLiteral("Here ");
                 EndContext();

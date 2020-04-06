@@ -1,51 +1,57 @@
-﻿@model Deliverable_22.Models.RegisterValidation
-
-@{
+﻿@{
     ViewData["Title"] = "Registration Page";
 }
 
+
 <h1>Sign up as a New User:</h1>
-@using (Html.BeginForm())
-{
-@Html.ValidationSummary(true)
-<fieldset>
-    <legend>Registration</legend>
 
-    <p>User Name: @Html.EditorFor(r => r.UserName)</p>
+<form action="RResult">
+    <fieldset>
+        <legend>Registration</legend>
 
-    @*<label for="Username">Username:</label>
-        <input type="text" name="Username" /><br />*@
+        <label for="Username">Username:</label>
+        <input type="text" name="Username" /><br />
 
-    <p>E-Mail: @Html.EditorFor(r => r.EMail)</p>
+        <label for="EMail">E-Mail:</label>
+        <input type="email" name="EMail" /><br />
 
-    <p>Password: @Html.EditorFor(r => r.Password)</p>
+        <label for="Password">Password:</label>
+        <input type="text" name="Password" /><br />
 
-    <p>Telephone Number: @Html.EditorFor(r => r.Telephone)</p>
+        <label for="PhoneNum">Phone Number:</label>
+        <input type="tel" name="Telephone" /><br />
 
-    <p>Telephone Type:</p>
-    <select id="Tele">
-        <option value="0">-----</option>
-        <option value="1">Home</option>
-        <option value="2">Cell</option>
-    </select>
-    <br>
+        <label for="Telephone">Telephone Type:</label>
+        <select id="Tele">
+            <option value="0">-----</option>
+            <option value="1">Home</option>
+            <option value="2">Cell</option>
+        </select>
 
-    <p>@Html.EditorFor(r => r.CheckBox) I am not a robot.</p>
-</fieldset>
+        <br />
+        <input type="checkbox" name="Human Validation" /><label for="Human Validation">Prove that you are not a robot!</label>
+        <br />
+        <br>
+
+    </fieldset>
     <br><input type="submit">
-}
+</form>
+
 <style type="text/css">
     .field-validation-error {
         color: #f00;
     }
+
     validation-summary-errors {
         color: #f00;
         font-weight: bold;
     }
+
     input-validation-error {
         border: 2px solid #f00;
         background-color: #fee;
     }
+
     input[type="checkbox"].input-cvalidation-error {
         outline: 2px solid #f00
     }
