@@ -1,33 +1,52 @@
-﻿@{
+﻿@model Deliverable_22.Models.RegisterValidation
+
+@{
     ViewData["Title"] = "Registration Page";
 }
 
-<form action="RResult">
-    <h1>Sign up as a New User:</h1>
+<h1>Sign up as a New User:</h1>
+@using (Html.BeginForm())
+{
+@Html.ValidationSummary(true)
+<fieldset>
+    <legend>Registration</legend>
 
-    <p>Username:</p>
-    <input type="text" name="Username" />
+    <p>User Name: @Html.EditorFor(r => r.UserName)</p>
 
-    <p>Email:</p>
-    <input type="email" name="Email" />
+    @*<label for="Username">Username:</label>
+        <input type="text" name="Username" /><br />*@
 
-    <p>Password:</p>
-    <input type="password" name="Password" />
+    <p>E-Mail: @Html.EditorFor(r => r.EMail)</p>
 
-    <p>Telephone Number</p>
-    <input type="tel" name="Telephone Number" />
+    <p>Password: @Html.EditorFor(r => r.Password)</p>
 
-    <p>Telephone Type</p>
+    <p>Telephone Number: @Html.EditorFor(r => r.Telephone)</p>
+
+    <p>Telephone Type:</p>
     <select id="Tele">
-        <option value="Home">Home</option>
-        <option value="Cell">Cell</option>
+        <option value="0">-----</option>
+        <option value="1">Home</option>
+        <option value="2">Cell</option>
     </select>
     <br>
-    
-    <p>Clicking the check mark means I am Human!</p>
-    <input type="checkbox">
-    
 
+    <p>@Html.EditorFor(r => r.CheckBox) I am not a robot.</p>
+</fieldset>
     <br><input type="submit">
-
-</form>
+}
+<style type="text/css">
+    .field-validation-error {
+        color: #f00;
+    }
+    validation-summary-errors {
+        color: #f00;
+        font-weight: bold;
+    }
+    input-validation-error {
+        border: 2px solid #f00;
+        background-color: #fee;
+    }
+    input[type="checkbox"].input-cvalidation-error {
+        outline: 2px solid #f00
+    }
+</style>
